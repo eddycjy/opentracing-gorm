@@ -11,8 +11,8 @@ import (
 )
 
 const (
-	parentSpanGormKey = "opentracingParentSpan"
-	spanGormKey       = "opentracingSpan"
+	parentSpanGormKey = "opentracing:parent.span"
+	spanGormKey       = "opentracing:span"
 )
 
 // SetSpanToGorm sets span to gorm settings, returns cloned DB
