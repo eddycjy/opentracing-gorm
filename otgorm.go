@@ -11,12 +11,12 @@ import (
 )
 
 const (
-	parentSpanGormKey = "opentracingParentSpan"
-	spanGormKey       = "opentracingSpan"
+	parentSpanGormKey = "opentracing:parent.span"
+	spanGormKey       = "opentracing:span"
 )
 
 // SetSpanToGorm sets span to gorm settings, returns cloned DB
-func SetSpanToGorm(ctx context.Context, db *gorm.DB) *gorm.DB {
+func WithContext(ctx context.Context, db *gorm.DB) *gorm.DB {
 	if ctx == nil {
 		return db
 	}
